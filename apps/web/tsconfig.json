@@ -1,0 +1,34 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    // Module Resolution
+    "moduleResolution": "bundler",
+    "module": "ESNext",
+
+    // JSX Support
+    "jsx": "react-jsx",
+
+    // Isolated Modules
+    "isolatedModules": true,
+
+    // No Emit
+    "noEmit": true,
+
+    // Type Definitions
+    "types": ["vite/client", "node"],
+
+    // Library
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+
+    // Paths and Base URL
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"],
+      "@components/*": ["./src/components/*"],
+      "@hooks/*": ["./src/hooks/*"],
+      "@utils/*": ["./src/utils/*"]
+    }
+  },
+  "include": ["src/**/*", "*.d.ts"],
+  "references": [{ "path": "./tsconfig.node.json" }]
+}
